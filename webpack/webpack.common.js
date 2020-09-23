@@ -49,15 +49,10 @@ module.exports = {
       },
     ],
   },
-  serve: {
-    add: app => {
-      app.use(convert(history()));
-    },
-    content: commonPaths.entryPath,
-    dev: {
-      publicPath: commonPaths.outputPath,
-    },
-    open: true,
+  devServer: {
+    contentBase: commonPaths.outputPath,
+    compress: true,
+    port: 9000,
   },
   resolve: {
     modules: ['src', 'node_modules'],
